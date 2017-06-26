@@ -1,0 +1,141 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'toastr';
+@import 'toastr-responsive';
+
+.carousel-inner {
+  .item {
+    img {
+      width: 800px;
+      height: 300px;
+    }
+  }
+}
+
+.navbar-custom {
+  background-image: linear-gradient(180deg, #436bb2 0, #2f4376);
+  .navbar-link {
+    border: none !important;
+    &:hover {
+      background: white !important;
+      color: #0F131C !important;
+    }
+  }
+}
+
+.container {
+  width: 95%;
+}
+
+body {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('framgia5.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.btn-dark {
+  background-image: linear-gradient(180deg, #436bb2 0, #2f4376);
+  color: white !important;
+  &:hover {
+    color: white;
+    background-image: linear-gradient(180deg, #111e36 0, #000d1c);
+  }
+}
+
+.glyphicon-refresh-animate {
+  -animation: spin .7s infinite linear;
+  -webkit-animation: spin2 .7s infinite linear;
+}
+
+.pull-right {
+  margin-left: 10px;
+}
+
+.alert {
+  margin: 0;
+}
+
+.visible-lg {
+  margin-top: -10px;
+  position: fixed;
+}
+
+.main {
+  margin-left: 30%;
+}
+
+.follows {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  color: #2d3d72;
+  background: #919fee;
+  &:hover {
+    background: #576192;
+    color: white;
+  }
+}
+
+.col-sm-3 {
+  .card {
+    margin: 10px;
+    background: #2f4376;
+    padding: 0 10px 0 10px;
+    &:hover {
+      border: solid 1px #020b28;
+    }
+  }
+  .header-bg {
+    background: #b3b1ff;
+  }
+  .content {
+    color: white;
+  }
+  .follow {
+    margin: 10px;
+  }
+  .profile-usertitle-name {
+    color: #00021c;
+  }
+}
+
+.title-follow {
+  padding: 10px;
+}
+
+.bg-white {
+  background: white;
+}
+
+.following {
+  border-left: solid 1px darkblue;
+}
+
+@-webkit-keyframes spin2 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}

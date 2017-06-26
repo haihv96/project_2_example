@@ -1,0 +1,29 @@
+<div class="panel panel-default panel-update updates-list post-item">
+
+  <% if current_user.try :is_author?, post %>
+    <%= render "posts/action_post", post: post %>
+  <% end %>
+  <%= render "posts/head_post", post: post %>
+  <% if logged_in? %>
+    <%= render "shared/comment_form", post: post %>
+  <% end %>
+  <div class="panel-footer">
+    <div id="show_comment" class="comments-section">
+      <% post.load_first_comments.each do |comment| %>
+        <%= render "comments/comment", comment: comment %>
+      <% end %>
+      <div id="load_more_comment">
+      </div>
+      <% if post.count_first_comment == 6 %>
+        <%= form_for post, url: load_comment_post_path(post),
+          method: :post do |f| %>
+          <%= f.hidden_field :id_comment_continue,
+            value: post.load_first_comments.last_id %>
+          <%= f.button "View more >>", class: "load-more btn btn-primary",
+            type: "submit" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "posts/edit_modal", post: post %>

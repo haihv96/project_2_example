@@ -60,9 +60,25 @@
       to see more useful Rails Best Practices.
     </p>
     <p>
-        No error found. Cool!
+        Found 4 warnings.
     </p>
     <table>
+          <tr>
+              <td>
+                <input type="checkbox" class="error-type" id="RemoveEmptyHelpersReview" value="RemoveEmptyHelpersReview"
+                />&nbsp;<label for="RemoveEmptyHelpersReview">Remove Empty Helpers</label>
+              </td>
+              <td>
+                <input type="checkbox" class="error-type" id="RemoveUnusedMethodsInControllersReview" value="RemoveUnusedMethodsInControllersReview"
+                />&nbsp;<label for="RemoveUnusedMethodsInControllersReview">Remove Unused Methods In Controllers</label>
+              </td>
+          </tr>
+        <tr>
+          <td colspan="3">
+            <button id="show-all">Check all</button>
+            <button id="show-none">Uncheck all</button>
+          </td>
+        </tr>
     </table>
     <table class="result">
       <thead>
@@ -73,6 +89,42 @@
         </tr>
       </thead>
       <tbody>
+          <tr class="RemoveEmptyHelpersReview">
+            <td class='filename'>
+                helpers/admin/static_pages_helper.rb
+            </td>
+            <td class='line'>1</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/' target='_blank'>remove empty helpers</a>
+            </td>
+          </tr>
+          <tr class="RemoveEmptyHelpersReview">
+            <td class='filename'>
+                helpers/static_pages_helper.rb
+            </td>
+            <td class='line'>1</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/' target='_blank'>remove empty helpers</a>
+            </td>
+          </tr>
+          <tr class="RemoveUnusedMethodsInControllersReview">
+            <td class='filename'>
+                controllers/admin/static_pages_controller.rb
+            </td>
+            <td class='line'>2</td>
+            <td class='message'>
+              <a href='' target='_blank'>remove unused methods (Admin::StaticPagesController#index)</a>
+            </td>
+          </tr>
+          <tr class="RemoveUnusedMethodsInControllersReview">
+            <td class='filename'>
+                controllers/static_pages_controller.rb
+            </td>
+            <td class='line'>2</td>
+            <td class='message'>
+              <a href='' target='_blank'>remove unused methods (StaticPagesController#index)</a>
+            </td>
+          </tr>
       </tbody>
     </table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

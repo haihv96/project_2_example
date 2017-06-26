@@ -1,0 +1,50 @@
+<nav class="navbar navbar-custom navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Framgia communication", root_path, class: "navbar-brand" %>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <form method="POST" accept-charset="UTF-8"
+            class="navbar-form navbar-left">
+        <div class="input-group navbar-input-group">
+          <input class="form-control navbar-form-input" placeholder="Search" data-url="http://wall.socialwallscript.com/people/search" autocomplete="off" name="q" type="text">
+          <span class="input-group-addon">
+            <button type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown hidden-xs">
+          <%= link_to "#", class: "dropdown-toggle navbar-link",
+            "data-toggle": "dropdown" do %>
+            <%= image_tag gravatar_url(current_user, size: 30),
+              class: "profile-image img-circle" %>
+            <%= current_user.full_name %>
+            <b class="caret"></b>
+          <% end %>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to user_path(current_user) do %>
+                <i class="glyphicon glyphicon-user"></i>
+                Profile
+              <% end %>
+            </li>
+            <li>
+              <%= link_to users_path do %>
+                <i class="glyphicon glyphicon-user"></i>
+                List user
+              <% end %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>Logout
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

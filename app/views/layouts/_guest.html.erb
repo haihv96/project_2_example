@@ -1,0 +1,18 @@
+<body class="homepage">
+<div id="wrap">
+  <%= render "layouts/guest/navigation" %>
+  <div class="container" id="home">
+    <div class="row">
+      <%= yield :different_layout %>
+      <% unless yield(:different_layout).present? %>
+        <div class="col-sm-3 visible-lg">
+          <%= yield :sidebar_guest %>
+        </div>
+      <% end %>
+      <div class="col-md-8 main">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

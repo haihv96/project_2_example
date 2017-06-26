@@ -1,0 +1,30 @@
+<div class="media comment-item">
+  <div class="media-left">
+    <%= link_to user_path(comment.user) do %>
+      <%= image_tag gravatar_url(comment.user, size: 40), class: "img-circle" %>
+    <% end %>
+  </div>
+  <div class="media-body">
+    <div class="media-heading clearfix">
+      <%= link_to comment.user.full_name, user_path(comment.user) %>
+      <span class="time-comment"><%= time_status comment %></span>
+      <% if current_user.try :is_commentator?, comment %>
+        <%= link_to "#", class: "edit_comment_button pull-right",
+          data: edit_post_comment_url(comment.post, comment), remote: true do %>
+          <span class="glyphicon glyphicon-edit"></span> Edit
+        <% end %>
+      <% end %>
+
+      <% if current_user.try :can_delete?, comment %>
+        <%= link_to post_comment_path(comment.post, comment.id),
+          class: "delete-comment pull-right",
+          method: :delete, remote: true do %>
+          <span class="glyphicon glyphicon-trash"></span> Delete
+        <% end %>
+      <% end %>
+    </div>
+    <div class="cmt-body">
+      <%= comment.context %>
+    </div>
+  </div>
+</div>

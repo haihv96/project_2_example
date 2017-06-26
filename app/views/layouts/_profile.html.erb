@@ -1,0 +1,81 @@
+<% @user ||= current_user %>
+<% if @user != current_user %>
+  <div id="profile-page"></div>
+<% end %>
+<div class="profile-sidebar">
+  <div class="profile-userpic">
+    <%= link_to user_path(@user) do %>
+      <%= image_tag gravatar_url(@user, size: 100),
+        class: "img-responsive", id: "profilePic" %>
+    <% end %>
+  </div>
+  <div class="profile-usertitle">
+    <div class="profile-usertitle-name">
+      <%= @user.full_name %>
+    </div>
+  </div>
+  <div class="profile-usermenu">
+    <div class="row">
+      <%= link_to followers_user_path(@user) do %>
+        <div class="col-md-6 follows">
+          <p id="count_followers"><%= @user.followers.size %></p>
+          Followers
+        </div>
+      <% end %>
+      <%= link_to following_user_path(@user) do %>
+        <div class="col-md-6 follows following">
+          <p id="count_following"><%= @user.following.size %></p>
+          Following
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="profile-userbuttons follow">
+    <% if logged_in? && !try(:current_user?, @user) %>
+      <% if current_user.following? @user %>
+        <%= render "shared/unfollow_form", user: @user %>
+      <% else %>
+        <%= render "shared/follow_form", user: @user %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="profile-usermenu">
+    <ul class="nav">
+      <li>
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-inbox"></i>
+          <strong>Email: </strong><%= @user.email %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-user"></i>
+          <strong>Gender: </strong><%= @user.gender %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel panel-default panel-update friends-list">
+  <div class="panel-heading">
+    <h3>
+      <%= link_to "Follower (#{@user.followers.size})",
+        followers_user_path(@user) %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-inline">
+      <% @user.followers.limit(8).each do |follower| %>
+        <li>
+          <%= link_to user_path(follower), data: {toggle: "tooltip",
+            placement: "top",
+            "original-title": follower.full_name} do %>
+            <%= image_tag gravatar_url(follower, size: 50),
+              class: "img-responsive" %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

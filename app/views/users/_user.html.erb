@@ -1,0 +1,33 @@
+<div class="col-sm-3">
+  <%= link_to user_path(user) do %>
+    <div class="card">
+      <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+      <div class="avatar">
+        <%= image_tag gravatar_url(user, size: 100) %>
+      </div>
+      <div class="content">
+        <p><%= user.full_name %></p>
+        <div class="row">
+          <div class="col-md-6">
+            <%= user.followers.size %><br>
+            followers
+          </div>
+          <div class="col-md-6">
+            <%= user.following.size %><br>
+            following
+          </div>
+        </div>
+        <% if logged_in? && !try(:current_user?, user) %>
+          <div class="follow">
+            <% if current_user.following? user %>
+              <%= render "shared/unfollow_form", user: user %>
+            <% else %>
+              <%= render "shared/follow_form", user: user %>
+            <% end %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

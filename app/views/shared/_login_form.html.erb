@@ -1,0 +1,28 @@
+<%= form_for :session, url: :login do |f| %>
+  <div class="row">
+    <h3 class="slogan text-center">Login</h3>
+    <div class="form-group ">
+      <%= render "shared/flash_messages" %>
+    </div>
+    <div class="form-group ">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group ">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="checkbox col-md-6">
+          <label>
+            <%= f.check_box :remember_me %> Remember Me
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group ">
+    <%= f.submit "Login", class: "form-control btn btn-dark" %>
+  </div>
+<% end %>

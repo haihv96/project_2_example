@@ -3,9 +3,9 @@
     "app_path": "/mnt/01D10FA3962A3750/RailsProject/project_2_example",
     "rails_version": "5.1.1",
     "security_warnings": 0,
-    "start_time": "2017-06-26 19:28:10 +0700",
-    "end_time": "2017-06-26 19:28:11 +0700",
-    "duration": 0.212721673,
+    "start_time": "2017-06-26 20:13:38 +0700",
+    "end_time": "2017-06-26 20:13:38 +0700",
+    "duration": 0.163788518,
     "checks_performed": [
       "BasicAuth",
       "BasicAuthTimingAttack",
@@ -71,9 +71,9 @@
       "XMLDoS",
       "YAMLParsing"
     ],
-    "number_of_controllers": 1,
+    "number_of_controllers": 3,
     "number_of_models": 1,
-    "number_of_templates": 2,
+    "number_of_templates": 4,
     "ruby_version": "2.4.0",
     "brakeman_version": "3.6.2"
   },

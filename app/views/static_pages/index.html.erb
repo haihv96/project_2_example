@@ -1,0 +1,19 @@
+<%= provide :sidebar_guest, render("shared/login_form") %>
+<div class="share-area">
+  <div id="post_errors" class="alert alert-danger fade alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert"
+       aria-label="close" title="close">×</a>
+    <div class="error-class">
+    </div>
+  </div>
+  <div class="status-upload clearfix">
+    <% if logged_in? %>
+      <%= render "shared/post_form" %>
+    <% end %>
+  </div>
+</div>
+<div id="posts">
+
+</div>
+<%= render @posts %>
+<%= paginate @posts, theme: "twitter-bootstrap-3" %>

@@ -1,0 +1,24 @@
+<div class="panel-body">
+  <div class="comment-section-actions">
+    <%= link_to "javascript:;", id: "comment",
+      class: "btn btn-sm btn-default comment-add" do %>
+      <i class="fa fa-comment-o"></i> <%= post.comments.size %> Comment
+    <% end %>
+  </div>
+</div>
+<div class="panel-update-comment">
+  <%= image_tag gravatar_url(current_user, size: 50), class: "img-circle" %>
+  <div class="panel-update-textarea">
+    <%= form_for [post, current_user.comments.build] do |f| %>
+      <%= f.text_area :context, class: "comment-area", cols: "50", rows: "10" %>
+      <%= f.hidden_field :post_id, value: post.id %>
+      <%= f.button "Post Comment", type: "submit", id: "submit_new_comment",
+        class: "btn btn-success cmt-button btn-sm" %>
+      <%= f.button "Cancel", type: "reset",
+        class: "btn btn-default btn-sm comment-area-reset" %>
+      <%= check_box_tag :enter_to_comment, true, enter_to_comment? %> Enter to
+      comment
+    <% end %>
+  </div>
+  <div class="clearfix"></div>
+</div>

@@ -1,0 +1,17 @@
+<% user = post.user  %>
+<div class="panel-heading">
+  <%= image_tag gravatar_url(user, size: 55) %>
+  <h3>
+    <%= link_to post.user.full_name, user_path(user) %>
+    <div class="time-section">
+        <span class="time-ago">
+          <%= link_to time_status(post), post_path(post) %>
+        </span>
+    </div>
+  </h3>
+  <div class="panel-title"><strong class="post_title"><%= post.title %></strong>
+  </div>
+</div>
+<div class="panel-body">
+  <p class="message-block post_context"><%= post.context %></p>
+</div>

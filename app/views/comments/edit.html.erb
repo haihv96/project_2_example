@@ -1,0 +1,7 @@
+<%= form_for [@comment.post, @comment], method: :patch do |f| %>
+  <div class="form-group">
+    <%= f.text_area :context, rows: "2", col: "10", class: "form-control" %>
+  </div>
+  <%= f.button "update", type: "submit", class: "update_comment btn-primary " %>
+  <%= f.button "cancel", type: "button", class: "cancel-button btn-warning" %>
+<% end %>
