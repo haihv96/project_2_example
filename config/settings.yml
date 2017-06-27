@@ -1,0 +1,10 @@
+post:
+  title:
+    max_length: 255
+user:
+  email:
+    max_length: 45
+  full_name:
+    max_length: 255
+  password:
+    max_length: 72
