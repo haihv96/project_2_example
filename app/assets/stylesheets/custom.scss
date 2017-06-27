@@ -1,0 +1,30 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+$navbar1-custom-color: #436bb2;
+$navbar2-custom-color: #2f4376;
+$navbar-link-hover: #0f131c;
+$white-color: #fff;
+
+.carousel-inner {
+  .item {
+    img {
+      height: 300px;
+      width: 800px;
+    }
+  }
+}
+
+.navbar-custom {
+  background-image: linear-gradient(
+    180deg, $navbar1-custom-color 0, $navbar2-custom-color);
+
+  .navbar-link {
+    border: 0;
+
+    &:hover {
+      background: $white-color;
+      color: $navbar-link-hover;
+    }
+  }
+}

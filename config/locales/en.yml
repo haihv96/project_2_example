@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    navigation:
+      signup: "Sign up"
+      login: "Login"
+      title: "Framgia communication v2"
+    footer:
+      copyright: "Copyright &copy; Framgia Viet Nam 2017"

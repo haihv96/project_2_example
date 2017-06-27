@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Project2Example</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag "application", media: "all",
-      "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application",
-      "data-turbolinks-track": "reload" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><%= yield :title %></title>
+    <%= render "layouts/include_assets" %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render "layouts/navigation" %>
+    <div class="container">
+      <div class="row">
+        <%= render "layouts/header" %>
+        <div class="col-sm-4 visible-lg">
+        </div>
+        <div class="col-md-8 main">
+          <%= yield %>
+        </div>
+      </div>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>

@@ -1,7 +1,10 @@
 source "https://rubygems.org"
 
+gem "bootstrap-sass", "3.3.7"
 gem "coffee-rails", "~> 4.2"
+gem "font-awesome-rails", "4.7.0.2"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails", "4.3.1"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.1"
