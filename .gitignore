@@ -19,3 +19,7 @@
 .byebug_history
 /.idea/*
 .editorconfig
+/.framgia-ci-reports/*
+/config/database.yml
+/config/secrets.yml
+.framgia-ci-result.temp.yml
