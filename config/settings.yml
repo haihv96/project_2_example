@@ -1,0 +1,6 @@
+post:
+  title:
+    max_length: 255
+user:
+  full_name:
+    max_length: 255

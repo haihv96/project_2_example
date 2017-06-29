@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
 gem "coffee-rails", "~> 4.2"
+gem "config", "1.4.0"
+gem "devise"
+gem "ffaker", "2.5.0"
 gem "jbuilder", "~> 2.5"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
