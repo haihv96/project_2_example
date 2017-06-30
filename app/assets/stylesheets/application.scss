@@ -1,2 +1,22 @@
-//= require_tree .
-//= require_self
+// BEGIN GLOBAL MANDATORY STYLES -->
+//= require metronic/font-awesome/css/font-awesome.min
+//= require metronic/simple-line-icons/simple-line-icons.min
+// END GLOBAL MANDATORY STYLES -->
+
+// BEGIN PAGE LEVEL PLUGINS -->
+//= require metronic/profile.min
+//= require metronic/select2.min
+//= require metronic/select2-bootstrap.min
+// BEGIN PAGE LEVEL PLUGINS -->
+
+//= require metronic/components.min
+//= require metronic/plugins.min
+// END THEME GLOBAL STYLES -->
+
+// BEGIN THEME LAYOUT STYLES -->
+//= require metronic/layout.min
+//= require metronic/darkblue.min
+// END THEME LAYOUT STYLES -->
+
+//= require socialwallscript
+//= require custom
