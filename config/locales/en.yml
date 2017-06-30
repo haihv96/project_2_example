@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    navigation:
+      title: "Framgia communication"
+      sign_up: "Sign up"
+      sign_in: "Sign in"
+    application:
+      title: "Framgia Communication"

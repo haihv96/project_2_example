@@ -1,2 +1,26 @@
-//= require_tree .
-//= require_self
+/*
+ *= require socialwallscript
+ <!-- BEGIN GLOBAL MANDATORY STYLES -->
+ *= require metronic/font-awesome/css/font-awesome.min
+ *= require metronic/simple-line-icons/simple-line-icons.min
+ *= require metronic/bootstrap.min
+ *= require metronic/bootstrap-switch.min
+ <!-- END GLOBAL MANDATORY STYLES -->
+
+ <!-- BEGIN PAGE LEVEL PLUGINS -->
+ *= require metronic/profile.min
+ *= require metronic/select2.min
+ *= require metronic/select2-bootstrap.min
+ *= require metronic/bootstrap-fileinput
+ <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+ *= require metronic/components.min
+ *= require metronic/plugins.min
+ <!-- END THEME GLOBAL STYLES -->
+
+ <!-- BEGIN THEME LAYOUT STYLES -->
+ *= require metronic/layout.min
+ *= require metronic/darkblue.min
+ <!-- END THEME LAYOUT STYLES -->
+ *= require custom
+ */
