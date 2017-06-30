@@ -1,0 +1,21 @@
+<h3 class="slogan">
+  <%= t ".title" %>
+</h3>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="item active"><%= image_tag "framgia4.jpg" %></div>
+    <div class="item"><%= image_tag "framgia1.jpg" %></div>
+    <div class="item"><%= image_tag "framgia2.jpg" %></div>
+    <div class="item"><%= image_tag "framgia3.jpg" %></div>
+    <div class="item"><%= image_tag "framgia5.jpg" %></div>
+
+    <%= link_to "#carousel-example-generic", class: "left carousel-control",
+      "data-slide": "prev", role: "button" do %>
+      <span class="sr-only"><%= t ".previous" %></span>
+    <% end %>
+    <%= link_to "#carousel-example-generic", class: "right carousel-control",
+      role: "button", "data-slide": "next" do %>
+      <span class="sr-only"><%= t ".next" %>Next</span>
+    <% end %>
+  </div>
+</div>
