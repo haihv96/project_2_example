@@ -2,13 +2,16 @@ source "https://rubygems.org"
 
 gem "coffee-rails", "~> 4.2"
 gem "config", "1.4.0"
+gem "bootstrap-sass", "3.3.7"
 gem "devise"
 gem "ffaker", "2.5.0"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails", "4.3.1"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.1"
 gem "sass-rails", "~> 5.0"
+gem "toastr-rails", "1.0.3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
@@ -19,8 +22,8 @@ group :development, :test do
   gem "rspec"
   gem "rspec-rails"
   gem "rspec-collection_matchers"
+  gem "rspec-html-matchers"
   gem "factory_girl_rails"
-  gem "better_errors"
   gem "guard-rspec", require: false
   gem "database_cleaner"
   gem "brakeman", require: false
