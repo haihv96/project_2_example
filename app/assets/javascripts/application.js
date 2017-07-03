@@ -1,15 +1,25 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
-// vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require rails-ujs
-//= require turbolinks
+//= require jquery3
+//= require jquery_ujs
+
+// BEGIN CORE PLUGINS -->
+//= require metronic/jquery.slimscroll.min
+//= require metronic/jquery.blockui.min
+// END CORE PLUGINS -->
+
+// BEGIN PAGE LEVEL PLUGINS -->
+//= require metronic/ui-modals.min
+//= require metronic/profile.min
+//= require metronic/bootstrap-fileinput
+// END PAGE LEVEL PLUGINS -->
+
+// BEGIN THEME GLOBAL SCRIPTS -->
+//= require metronic/app.min
+// END THEME GLOBAL SCRIPTS -->
+
+// BEGIN PAGE LEVEL SCRIPTS -->
+// END PAGE LEVEL SCRIPTS -->
+
+//= require toastr
+//= require socialwallscript
 //= require_tree .
