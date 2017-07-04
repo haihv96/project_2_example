@@ -1,1 +1,4 @@
-<div class="main"></div>
+<%= provide :posts_page, "active" %>
+<%= provide :main  do %>
+<% end %>
+<%= render "layouts/main", user: @user %>

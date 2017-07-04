@@ -1,0 +1,67 @@
+<%= provide :profile_page, "active" %>
+<%= provide :main do %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet light ">
+        <div class="portlet-title tabbable-line">
+          <div class="caption caption-md">
+            <i class="icon-globe theme-font hide"></i>
+            <span class="caption-subject font-blue-madison bold uppercase">
+              <%= t ".profile_account" %>
+            </span>
+          </div>
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#tab_1_1" data-toggle="tab"><%= t ".account_setting" %></a>
+            </li>
+            <li>
+              <a href="#tab_1_2" data-toggle="tab"><%= t ".change_avatar" %></a>
+            </li>
+          </ul>
+        </div>
+        <div class="portlet-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_1_1">
+              <div class="col-md-6 no-padding-left">
+                <div class="portlet box">
+                  <div class="portlet-title bg-green-seagreen">
+                    <div class="caption">
+                      <span aria-hidden="true" class="icon-user"></span>
+                      <%= t ".personal_info" %>
+                    </div>
+                  </div>
+                  <div class="portlet-body">
+                    <div class="row">
+                      <%= render "personal_form" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 no-padding-right">
+                <div class="portlet box">
+                  <div class="portlet-title bg-red">
+                    <div class="caption">
+                      <span aria-hidden="true" class="icon-lock"></span>
+                      <%= t ".advanced_account" %>
+                    </div>
+                  </div>
+                  <div class="portlet-body">
+                    <div class="row">
+                      <%= render "advanced_form" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab_1_2">
+              <div class="row" id="form_edit_profile">
+                <%= render "change_avatar" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render "layouts/main" %>
