@@ -1,6 +1,9 @@
 //= require rails-ujs
-//= require jquery3
+//= require cable
+//= require jquery
 //= require jquery_ujs
+//= require i18n
+//= require i18n/translations
 
 // BEGIN CORE PLUGINS -->
 //= require metronic/jquery.slimscroll.min
@@ -20,6 +23,8 @@
 // BEGIN PAGE LEVEL SCRIPTS -->
 // END PAGE LEVEL SCRIPTS -->
 
+//= require tinymce
 //= require toastr
 //= require socialwallscript
+//= require jquery.jcrop
 //= require_tree .
