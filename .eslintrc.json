@@ -4,7 +4,13 @@
     "jquery": true
   },
   "globals": {
-    "window": true
+    "window": true,
+    "I18n": true,
+    "toastr": true,
+    "tinyMCE": true,
+    "AppElement": true,
+    "Form": true,
+    "AjaxFormRequest": true
   },
 
   "extends": "eslint:recommended",

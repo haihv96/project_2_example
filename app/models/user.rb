@@ -1,6 +1,11 @@
 class User < ApplicationRecord
+  VALID_PHONE_REGEX = /\A(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*\z/
+
   enum role: [:user, :admin]
   enum gender: [:female, :male, :other]
+
+  mount_uploader :avatar, AvatarUploader
+  crop_uploaded :avatar
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -16,6 +21,9 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true,
     length: {maximum: Settings.user.full_name.max_length}
+  validates :phone, format: {with: VALID_PHONE_REGEX},
+    length: {maximum: Settings.user.phone.max_length}, allow_blank: true
+  validate :avatar_size
 
   before_save :downcase_email
 
@@ -23,5 +31,10 @@ class User < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  def avatar_size
+    errors.add(:avatar, I18n.t("user.avatar.warning")) if
+      avatar.size > (Settings.user.avatar.max_size).megabytes
   end
 end

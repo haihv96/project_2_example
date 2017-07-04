@@ -9,6 +9,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
       t.integer :role, null: false, default: 0
       t.integer :gender, null: false, default: 0
       t.string :phone
+      t.string :avatar
 
       ## Recoverable
       t.string :reset_password_token
