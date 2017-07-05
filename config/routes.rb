@@ -4,9 +4,14 @@ Rails.application.routes.draw do
     get "profile", to: "registrations#edit"
   end
   devise_for :users, controllers: {registrations: "registrations"}
-  resources :users, only: :show do
+  resources :users do
     member do
       get :following, :followers
+      get :posts, to: "posts#index"
     end
+  end
+
+  resources :posts, except: [:index, :new, :edit] do
+    resources :comments, except: [:new]
   end
 end
