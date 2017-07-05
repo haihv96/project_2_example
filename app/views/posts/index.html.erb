@@ -1,0 +1,16 @@
+<%= provide :posts_page, "active" %>
+<%= provide :main do %>
+  <% if current_user.is? @user %>
+    <a id="sample_editable_1_new" data-toggle="modal" href="#large"
+      class="btn sbold blue-steel"> <%= t ".new" %>
+      <i class="fa fa-plus"></i>
+    </a>
+    <%= render "shared/post_form" %>
+  <% end %>
+  <div class="body-posts-area">
+    <%= render @posts %>
+    <%= paginate @posts, theme: "twitter-bootstrap-3" %>
+  </div>
+
+<% end %>
+<%= render "layouts/main", user: @user %>

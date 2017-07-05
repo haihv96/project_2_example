@@ -1,0 +1,17 @@
+<% user = post.user %>
+<div class="panel-heading">
+  <%= avatar_tag user, width: Settings.user.avatar.head_post %>
+  <h3>
+    <%= link_to post.user.full_name, user %>
+    <div class="time-section">
+      <span class="time-ago">
+        <%= link_to time_status(post), post %>
+      </span>
+    </div>
+  </h3>
+  <div class="panel-title"><strong class="post_title"><%= post.title %></strong>
+  </div>
+</div>
+<div class="panel-body">
+  <div class="message-block post_content"><%= raw post.content %></div>
+</div>

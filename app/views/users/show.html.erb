@@ -1,4 +1,2 @@
 <%= provide :profile_page, "active" %>
-<%= provide :main do %>
-<% end %>
-<%= render "layouts/main" %>
+<%= render "layouts/main", user: @user %>

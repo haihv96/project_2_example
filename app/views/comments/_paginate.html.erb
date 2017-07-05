@@ -1,0 +1,9 @@
+<div class="show-comment comments-section">
+  <div class="comments-area">
+    <%= render comments %>
+  </div>
+  <div class="paginate_comment">
+    <%= paginate comments, remote: true, theme: "twitter-bootstrap-3",
+      pagination_class: "pagination-sm" %>
+  </div>
+</div>
