@@ -27,6 +27,18 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  def feed
+    if following.present?
+      Post.feed_by_user following.ids, id
+    else
+      posts.time_line
+    end
+  end
+
+  def is? other_user
+    self == other_user
+  end
+
   private
 
   def downcase_email

@@ -21,6 +21,10 @@ gem "uglifier", ">= 1.3.0"
 gem "tinymce-rails"
 gem "carrierwave-crop"
 gem "jcrop-rails-v2"
+gem "cancancan"
+gem "bootstrap-kaminari-views", "0.0.5"
+gem "kaminari", "1.0.1"
+gem "rails-timeago"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

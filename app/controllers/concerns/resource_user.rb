@@ -1,11 +1,13 @@
 module ResourceUser
   extend ActiveSupport::Concern
 
-  def resource
-    @user ||= build_resource
+  included do
+    before_action :user, only: :show
   end
 
-  def build_resource
-    (user = User.find_by id: params[:id]) ? user : render_404
+  private
+
+  def user
+    @user ||= User.find_by(id: params[:id]) || render_404_page
   end
 end
