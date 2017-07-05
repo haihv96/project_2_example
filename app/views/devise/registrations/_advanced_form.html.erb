@@ -1,0 +1,46 @@
+<%= form_for resource, as: resource_name,
+  url: registration_path(resource_name), html: {method: :put} do |f| %>
+  <%= render "shared/error_messages", object: resource %>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control", autofocus: true %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div><%= t ".confirm_email" %>
+      <%= resource.unconfirmed_email %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <i>(<%= t ".leave_blank" %>)</i>
+    <%= f.password_field :password, class: "form-control",
+      autocomplete: "off" %>
+    <em><%= t ".character" %></em>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control",
+      autocomplete: "off" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password %>
+    <i>(<%= t ".we_need" %>)</i>
+    <%= f.password_field :current_password,
+      class: "form-control", autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t(".update"), class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<h3><%= t ".cancel_account" %></h3>
+<p><%= t ".unhappy" %> <%= button_to t(".cancel_my_account"),
+  registration_path(resource_name), class: "btn btn-danger",
+  data: {confirm: t(".confirm")}, method: :delete %>
+</p>

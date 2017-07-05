@@ -1,0 +1,35 @@
+<div class="portlet light profile-sidebar-portlet">
+  <div class="profile-userpic">
+    <%= avatar_tag user, class: "img-responsive" %>
+  </div>
+  <div class="profile-usertitle">
+    <div class="profile-usertitle-name"><%= user.full_name %></div>
+    <div class="profile-usertitle-job"><%= user.gender %></div>
+  </div>
+  <div class="profile-userbuttons">
+    <button type="button" class="btn btn-circle green btn-sm"></button>
+    <button type="button" class="btn btn-circle red btn-sm"></button>
+  </div>
+  <div class="profile-usermenu">
+    <ul class="nav">
+      <li class="active">
+        <a href="page_user_profile_1.html">
+          <i class="icon-home"></i> <%= t ".overview" %> </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row list-separated profile-stat">
+  <div class="col-md-4 col-sm-4 col-xs-6">
+    <div class="uppercase profile-stat-title"></div>
+    <div class="uppercase profile-stat-text"> <%= t ".posts" %></div>
+  </div>
+  <div class="col-md-4 col-sm-4 col-xs-6">
+    <div class="uppercase profile-stat-title"></div>
+    <div class="uppercase profile-stat-text"> <%= t ".following" %></div>
+  </div>
+  <div class="col-md-4 col-sm-4 col-xs-6">
+    <div class="uppercase profile-stat-title"></div>
+    <div class="uppercase profile-stat-text"> <%= t ".followers" %></div>
+  </div>
+</div>
