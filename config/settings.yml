@@ -4,3 +4,9 @@ post:
 user:
   full_name:
     max_length: 255
+  avatar:
+    accept: "image/jpeg,image/gif,image/png"
+    current_size: 250
+    max_size: 5
+  phone:
+    max_length: 13

@@ -4,8 +4,16 @@ en:
       title: "Framgia communication"
       sign_up: "Sign up"
       sign_in: "Sign in"
+      profile: "Profile"
+      list_user: "List user"
+      logout: "Logout"
     application:
       title: "Framgia Communication"
+    main:
+      profile: "Profile"
+      followers: "Followers"
+      following: "Following"
+      posts: "Posts"
   devise:
     passwords:
       new:
@@ -26,6 +34,32 @@ en:
         minimum: "characters minimum"
         confirm_password: "Password Confirmation"
         gender: "Gender"
+      edit:
+        profile_account: "Profile Account"
+        account_setting: "Account setting"
+        change_avatar: "Change Avatar"
+        personal_info: "Persional Info"
+        advanced_account: "Advanced account"
+      personal_form:
+        cancel: "Cancel"
+        update: "Update"
+      advanced_form:
+        leave_blank: "leave blank if you don't want to change it"
+        character: "6 characters  minimum"
+        confirm_email: "Currently waiting confirmation for:"
+        we_need: "we need your current password to confirm your changes"
+        update: "Update"
+        cancel_account: "Cancel my account"
+        unhappy: "Unhappy?"
+        cancel_my_account: "Cancel my account"
+        confirm: "Are you sure?"
+      change_avatar:
+        cancel: "Cancel"
+        update: "Update"
+        previewbox: "Preview Avatar box"
+        cropbox: "Crop Avatar Box"
+        change: "Change"
+        select_image: "Select image"
     confirmations:
       new:
         submit: "Resend confirmation instructions"
@@ -48,3 +82,23 @@ en:
       title: "Wellcome to Framgia Communication."
       previous: "Previous"
       next: "Previous"
+  users:
+    basic_profile:
+      overview: "Overview"
+      posts: "Posts"
+      following: "Following"
+      followers: "Followers"
+  user:
+    avatar:
+      warning: "should be less than 5MB"
+      type_error: "avatar accept only [gif, png, jpg, jpeg] file"
+      size_error: "Maximum file size is 5MB. Please choose a smaller file."
+  registrations:
+    create:
+      success: "Register successfull!"
+      error: "Please check your information"
+    update:
+      success: "Update profile successfull"
+      success_html: "Update profile successfull"
+      error: "Please check your input"
+      error_html: "Please check your input"
