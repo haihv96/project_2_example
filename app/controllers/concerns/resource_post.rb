@@ -3,7 +3,7 @@ module ResourcePost
   include ResourceUser
 
   included do
-    before_action :post, only: :show
+    before_action :post, except: [:index, :create]
     before_action :posts, only: :index
   end
 

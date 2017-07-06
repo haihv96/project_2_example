@@ -138,9 +138,7 @@ var Form = function (form) {
     $.ajax({
       type: method,
       url: url_ajax,
-      data: {
-        get_data_only: true,
-      },
+      data: {get_data_only: true},
       dataType: 'json',
       success: function (response) {
         if (response.status == 'success') {

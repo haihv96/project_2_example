@@ -1,11 +1,10 @@
 //= require rails-ujs
 //= require cable
-//= require jquery
-//= require jquery_ujs
-//= require i18n
-//= require i18n/translations
+//= require jquery.min
+//= require bootstrap.min
 
 // BEGIN CORE PLUGINS -->
+//= require metronic/jquery-ui.min
 //= require metronic/jquery.slimscroll.min
 //= require metronic/jquery.blockui.min
 // END CORE PLUGINS -->
@@ -25,6 +24,6 @@
 
 //= require tinymce
 //= require toastr
-//= require socialwallscript
 //= require jquery.jcrop
+//= require rails-timeago
 //= require_tree .

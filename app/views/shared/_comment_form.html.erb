@@ -1,0 +1,29 @@
+<div class="panel-body">
+  <div class="comment-section-actions">
+    <%= button_tag class: "btn btn-sm btn-default comment-add" do %>
+      <i class="fa fa-comment-o"></i> <%= post.comments.size %>
+      <%= t ".comment" %>
+    <% end %>
+  </div>
+</div>
+<div id="comment_box_<%= post.id %>" class="panel-update-comment collapse">
+  <%= avatar_tag current_user, width: 50, class: "img-circle" %>
+  <div class="panel-update-textarea">
+    <%= form_for [post, current_user.comments.build] do |f| %>
+      <%= f.text_area :content, class: "comment-area",
+        cols: Settings.comment.box_comment.cols,
+        rows: Settings.comment.box_comment.rows %>
+      <%= f.hidden_field :post_id, value: post.id %>
+
+      <div class="comment-action">
+        <%= f.button t(".post_comment"), type: "submit",
+          class: "btn btn-primary cmt-button btn-sm submit-new-comment" %>
+        <%= f.button t(".cancel"), type: "reset",
+          class: "btn btn-default btn-sm comment-area-reset" %>
+        <%= check_box_tag :enter_to_comment, true, enter_to_comment? %>
+        <%= t ".enter" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="clearfix"></div>
+</div>

@@ -88,6 +88,10 @@ en:
       cancel: "Cancel"
       post_comment: "Post Comment"
       enter: "Enter to  comment"
+    post_form:
+      new: "new post"
+      cancel: "Cancel"
+      submit: "Post now"
   users:
     basic_profile:
       overview: "Overview"
@@ -152,3 +156,7 @@ en:
   helpers:
     update: "Update"
     ago: "ago"
+  static_pages:
+    index:
+      no_post: "No updates available"
+      new: "New post"

@@ -11,27 +11,35 @@
   <div class="portlet-body">
     <div class="tabbable-custom ">
       <ul class="nav nav-tabs ">
-        <li class="<%= yield :posts_page %>">
+        <li class="<%= yield :home_page %>">
           <%= link_to root_path do %>
-            <strong> <%= t ".posts" %> </strong>
+            <strong> <%= t ".home" %> </strong>
           <% end %>
         </li>
+
         <% if user.present? %>
-          <li class="<%= yield :profile_page %>">
-            <%= link_to user do %>
-              <strong> <%= t ".profile" %> </strong>
+          <li class="<%= yield :posts_page %>">
+            <%= link_to posts_user_path user do %>
+              <strong> <%= t ".posts" %> </strong>
             <% end %>
           </li>
-          <li class="<%= yield :following_page %>">
-            <%= link_to following_user_path(user) do %>
-              <strong> <%= t ".following" %> </strong>
-            <% end %>
-          </li>
-          <li class="<%= yield :followers_page %>">
-            <%= link_to following_user_path(user) do %>
-              <strong> <%= t ".followers" %> </strong>
-            <% end %>
-          </li>
+          <% if user.present? %>
+            <li class="<%= yield :profile_page %>">
+              <%= link_to user do %>
+                <strong> <%= t ".profile" %> </strong>
+              <% end %>
+            </li>
+            <li class="<%= yield :following_page %>">
+              <%= link_to following_user_path user do %>
+                <strong> <%= t ".following" %> </strong>
+              <% end %>
+            </li>
+            <li class="<%= yield :followers_page %>">
+              <%= link_to following_user_path user do %>
+                <strong> <%= t ".followers" %> </strong>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
       <div class="tab-content">
@@ -42,3 +50,4 @@
     </div>
   </div>
 </div>
+<%= tinymce %>

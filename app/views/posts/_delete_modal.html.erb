@@ -1,0 +1,23 @@
+<div class="modal fade bs-modal"
+  id="delete_post_<%= post.id %>_id" tabindex="-1"
+  role="dialog" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-red">
+        <button type="button" class="close"
+          data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title bold uppercase font-white"><%= t ".delete" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= t ".confirm" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark cancel-button"
+          data-dismiss="modal"><%= t ".cancel" %>
+        </button>
+        <%= link_to t(".delete_button"), post, method: :delete,
+          class: "btn btn-danger delete-post" %>
+      </div>
+    </div>
+  </div>
+</div>
