@@ -74,7 +74,7 @@ $(document).ready(function () {
   });
 
   $('body').on('click', '.comment-add', function () {
-    $(this).closest('.panel-body').next().slideToggle('fast');
+    $(this).closest('.post-item').find('.panel-update-comment').slideToggle('fast');
   });
 
   $('body').on('click', '.comment-area-reset', function () {

@@ -81,6 +81,7 @@ $(document).ready(function () {
 
   $('body').on('click', '.cancel-edit-post', function () {
     var form = new Form($(this).closest('form'));
+    form.clear_error();
     form.undo_input('post', 'get', form.element.attr('action'));
   });
 });

@@ -141,3 +141,12 @@ body {
 .comment-action {
   margin: 5px 0;
 }
+
+.post-title,
+.post-content {
+  word-wrap: break-word;
+}
+
+.profile-content {
+  min-height: 500px;
+}

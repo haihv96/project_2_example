@@ -1,19 +1,21 @@
 class PostsController < ApplicationController
   include ResourcePost
+  authorize_resource
 
   def index
   end
 
   def create
-    build_post post_params
     if build_post.save
       render json: {
-        status: :success, message: t(".success"),
+        status: :success,
+        message: t(".success"),
         html: render_to_string(build_post)
       }
     else
       render json: {
-        status: :error, errors: build_post.errors.messages, message: t(".error")
+        status: :error, errors: build_post.errors.messages,
+        message: t(".error")
       }
     end
   end
@@ -31,10 +33,13 @@ class PostsController < ApplicationController
 
   def update
     if post.update_attributes post_params
-      render json: {status: :success, message: t(".success")}
+      render json: {
+        status: :success, message: t(".success")
+      }
     else
       render json: {
-        status: :error, errors: post.errors.messages, message: t(".error")
+        status: :error, errors: post.errors.messages,
+        message: t(".error")
       }
     end
   end
@@ -45,11 +50,5 @@ class PostsController < ApplicationController
     else
       render json: {status: :error, message: t(".error")}
     end
-  end
-
-  private
-
-  def post_params
-    params.require(:post).permit :title, :content
   end
 end

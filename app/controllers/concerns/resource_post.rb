@@ -1,16 +1,16 @@
 module ResourcePost
   extend ActiveSupport::Concern
-  include ResourceUser
 
   included do
-    before_action :post, except: [:index, :create]
+    before_action :build_post, only: :create
+    before_action :post, except: [:create, :index]
     before_action :posts, only: :index
   end
 
   private
 
-  def build_post params = nil
-    @post ||= current_user.posts.build params
+  def build_post
+    @post ||= current_user.posts.build post_params
   end
 
   def post
@@ -18,7 +18,15 @@ module ResourcePost
   end
 
   def posts
-    @posts ||= user.posts.time_line.page(params[:page])
-               .per(Settings.posts.per_page) if user
+    @posts = user.posts.time_line.page(params[:page])
+             .per(Settings.user.posts.per_page) if user
+  end
+
+  def post_params
+    params.require(:post).permit :title, :content
+  end
+
+  def user
+    @user ||= User.find_by(id: params[:id]) || render_404_page
   end
 end
