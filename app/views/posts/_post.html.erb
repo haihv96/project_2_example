@@ -2,7 +2,15 @@
   <%= render "posts/action_post", post: post %>
   <%= render "posts/head_post", post: post %>
   <%= hidden_field_tag :post_id, post.id %>
-  <% if user_signed_in? %>
+  <div class="panel-body">
+    <div class="comment-section-actions">
+      <%= button_tag class: "btn btn-sm btn-default comment-add" do %>
+        <i class="fa fa-comment-o"></i> <%= post.comments.size %>
+        <%= t ".comment" %>
+      <% end %>
+    </div>
+  </div>
+  <% if can? :new, post.comments.build %>
     <%= render "shared/comment_form", post: post %>
   <% end %>
   <div class="panel-footer bg-white">

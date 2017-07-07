@@ -92,12 +92,19 @@ en:
       new: "new post"
       cancel: "Cancel"
       submit: "Post now"
+    follow_field:
+      follow: "Follow"
+      unfollow: "Unfollow"
   users:
     basic_profile:
       overview: "Overview"
       posts: "Posts"
       following: "Following"
       followers: "Followers"
+    user:
+      people_followed: "people followed"
+    follow:
+      no_avail: "No updates available"
   user:
     avatar:
       warning: "should be less than 5MB"
@@ -127,6 +134,8 @@ en:
     edit:
       update: "update"
       cancel: "cancel"
+    create:
+      permission: "Follow post's author to comment!"
   posts:
     create:
       success: "Create post success!"
@@ -153,6 +162,7 @@ en:
       edit: "edit post"
     index:
       new: "New post"
+      no_valid: "No updates available"
   helpers:
     update: "Update"
     ago: "ago"
@@ -160,3 +170,10 @@ en:
     index:
       no_post: "No updates available"
       new: "New post"
+  relationships:
+    create:
+      error: "Can't follow this user!"
+      followed: "followed"
+    destroy:
+      unfollowed: "unfollowed"
+      error: "Can't unfollow this user!"

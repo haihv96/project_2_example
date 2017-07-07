@@ -7,10 +7,21 @@
     </a>
     <%= render "shared/post_form" %>
   <% end %>
-  <div class="body-posts-area">
-    <%= render @posts %>
-    <%= paginate @posts, theme: "twitter-bootstrap-3" %>
-  </div>
 
+  <% if @posts.any? %>
+    <div class="body-posts-area">
+      <%= render @posts %>
+      <%= paginate @posts, theme: "twitter-bootstrap-3" %>
+    </div>
+  <% else %>
+    <div class="updates">
+      <div class="alert alert-warning no-updates"><%= t ".no_valid" %></div>
+      <div class="loader hidden text-center">
+        <div class="btn btn-default">
+          <i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
 <%= render "layouts/main", user: @user %>

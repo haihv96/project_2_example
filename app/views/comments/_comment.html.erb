@@ -9,16 +9,21 @@
     <div class="media-heading clearfix">
       <%= link_to comment.user.full_name, user_path(comment.user) %>
       <span class="time-comment"><%= time_status comment %></span>
-      <%= link_to "#", class: "edit_comment_button pull-right",
-        data: edit_post_comment_url(comment.post, comment), remote: true do %>
-        <i class="fa fa-edit font-green-seagreen"></i>
+
+      <% if can? :update, comment %>
+        <%= link_to "#", class: "edit_comment_button pull-right",
+          data: edit_post_comment_url(comment.post, comment), remote: true do %>
+          <i class="fa fa-edit font-green-seagreen"></i>
+        <% end %>
       <% end %>
 
-      <%= link_to "#delete_comment_#{comment.id}_id", "data-toggle": "modal",
-        class: "pull-right" do %>
-        <i class="fa fa-trash font-red"></i>
+      <% if can? :destroy, comment %>
+        <%= link_to "#delete_comment_#{comment.id}_id", "data-toggle": "modal",
+          class: "pull-right" do %>
+          <i class="fa fa-trash font-red"></i>
+        <% end %>
+        <%= render "comments/delete_modal", comment: comment %>
       <% end %>
-      <%= render "comments/delete_modal", comment: comment %>
     </div>
     <div class="cmt-body">
       <%= comment.content %>

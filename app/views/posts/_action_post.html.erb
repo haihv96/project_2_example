@@ -1,6 +1,8 @@
-<div class="dropdown">
+<% if can? :modify, post %>
   <%= render "posts/edit_modal", post: post %>
   <%= render "posts/delete_modal", post: post %>
+<% end %>
+<div class="dropdown">
   <div class="btn-group">
     <a class="btn dark btn-outline btn-circle btn-sm" href="javascript:;"
       data-toggle="dropdown" data-hover="dropdown" data-close-others="true"
@@ -9,23 +11,25 @@
       <i class="fa fa-angle-down"></i>
     </a>
     <ul class="dropdown-menu pull-right">
+      <% if can? :modify, post %>
+        <li>
+          <%= link_to post,
+            class: "edit_user_button font-green-seagreen",
+            "data-toggle": "modal",
+            href: "#edit_post_#{post.id}_id" do %>
+            <i class="icon-pencil font-green-seagreen"></i> <%= t ".edit" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#delete_post_#{post.id}_id", "data-toggle": "modal",
+            class: "font-red" do %>
+            <i class="fa fa-trash-o font-red"></i> <%= t ".delete" %>
+          <% end %>
+        </li>
+      <% end %>
       <li>
-        <%= link_to post,
-          class: "edit_user_button font-green-seagreen",
-          "data-toggle": "modal",
-          href: "#edit_post_#{post.id}_id" do %>
-          <i class="icon-pencil font-green-seagreen"></i> <%= t ".edit" %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#delete_post_#{post.id}_id", "data-toggle": "modal",
-          class: "font-red" do %>
-          <i class="fa fa-trash-o font-red"></i> <%= t ".delete" %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to post,
-          class: "share-post font-blue-steel", remote: true do %>
+        <%= link_to post, class: "share-post font-blue-steel",
+          remote: true do %>
           <i class="fa fa-share font-blue-steel"></i> <%= t ".share" %>
         <% end %>
       </li>
