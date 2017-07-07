@@ -2,7 +2,8 @@ module ResourceComment
   extend ActiveSupport::Concern
 
   included do
-    before_action :comment, only: [:edit, :show]
+    before_action :comment, except: [:index, :create]
+    before_action :build_comment, only: :create
   end
 
   private
@@ -11,7 +12,11 @@ module ResourceComment
     @comment ||= Comment.find_by(id: params[:id]) || render_404_page
   end
 
-  def build_comment params = nil
-    @comment ||= current_user.comments.build params
+  def build_comment
+    @comment ||= current_user.comments.build comment_params
+  end
+
+  def comment_params
+    params.require(:comment).permit :post_id, :content
   end
 end

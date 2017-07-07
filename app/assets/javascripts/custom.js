@@ -129,7 +129,7 @@ var Form = function (form) {
   this.clear_input = function () {
     this.element.find('input').val(null);
     if (tinyMCE.activeEditor != null) {
-      tinyMCE.activeEditor.setContent(null);
+      tinyMCE.activeEditor.setContent('');
     }
   };
 

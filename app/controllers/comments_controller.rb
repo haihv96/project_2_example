@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   include ResourceComment
+  authorize_resource except: :create
 
   def index
     comments = Post.find_by(id: params[:post_id])
@@ -23,7 +24,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    build_comment comment_params
+    authorize! :create, build_comment, message: t(".permission")
     if build_comment.save
       if params[:enter_to_comment].present?
         remember_enter_to_comment
@@ -59,11 +60,5 @@ class CommentsController < ApplicationController
     else
       render json: {status: :error, message: t(".error")}
     end
-  end
-
-  private
-
-  def comment_params
-    params.require(:comment).permit :post_id, :content
   end
 end
