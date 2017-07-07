@@ -6,9 +6,8 @@
     <div class="profile-usertitle-name"><%= user.full_name %></div>
     <div class="profile-usertitle-job"><%= user.gender %></div>
   </div>
-  <div class="profile-userbuttons">
-    <button type="button" class="btn btn-circle green btn-sm"></button>
-    <button type="button" class="btn btn-circle red btn-sm"></button>
+  <div class="profile-userbuttons follow-field">
+    <%= render "shared/follow_field", user: user %>
   </div>
   <div class="profile-usermenu">
     <ul class="nav">
@@ -21,15 +20,15 @@
 </div>
 <div class="row list-separated profile-stat">
   <div class="col-md-4 col-sm-4 col-xs-6">
-    <div class="uppercase profile-stat-title"></div>
+    <div class="uppercase profile-stat-title"><%= user.posts.size %></div>
     <div class="uppercase profile-stat-text"> <%= t ".posts" %></div>
   </div>
   <div class="col-md-4 col-sm-4 col-xs-6">
-    <div class="uppercase profile-stat-title"></div>
+    <div class="uppercase profile-stat-title"><%= user.following.size %></div>
     <div class="uppercase profile-stat-text"> <%= t ".following" %></div>
   </div>
   <div class="col-md-4 col-sm-4 col-xs-6">
-    <div class="uppercase profile-stat-title"></div>
+    <div class="uppercase profile-stat-title"><%= user.followers.size %></div>
     <div class="uppercase profile-stat-text"> <%= t ".followers" %></div>
   </div>
 </div>

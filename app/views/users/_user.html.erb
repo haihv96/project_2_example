@@ -1,0 +1,21 @@
+<div class="col-md-6">
+  <div class="col-md-12 portlet light bordered">
+    <div class="row">
+      <div class="col-md-4">
+        <%= avatar_tag user, width: Settings.user.avatar.show_user %>
+      </div>
+      <div class="col-md-8 no-padding-left">
+        <h4 class="bold"><%= user.full_name %></h4>
+        <cite><%= user.email %></cite>
+        <div class="comment-action">
+          <cite class="font-grey-mint">
+            <%= user.followers.size %> <%= t ".people_followed" %>
+          </cite>
+          <div class="follow-field pull-right">
+            <%= render "shared/follow_field", user: user %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

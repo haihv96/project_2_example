@@ -1,13 +1,6 @@
-<div class="panel-body">
-  <div class="comment-section-actions">
-    <%= button_tag class: "btn btn-sm btn-default comment-add" do %>
-      <i class="fa fa-comment-o"></i> <%= post.comments.size %>
-      <%= t ".comment" %>
-    <% end %>
-  </div>
-</div>
 <div id="comment_box_<%= post.id %>" class="panel-update-comment collapse">
-  <%= avatar_tag current_user, width: 50, class: "img-circle" %>
+  <%= avatar_tag current_user, width: Settings.user.avatar.comment_form,
+    class: "img-circle" %>
   <div class="panel-update-textarea">
     <%= form_for [post, current_user.comments.build] do |f| %>
       <%= f.text_area :content, class: "comment-area",
@@ -25,5 +18,5 @@
       </div>
     <% end %>
   </div>
-  <div class="clearfix"></div>
 </div>
+<div class="clearfix"></div>

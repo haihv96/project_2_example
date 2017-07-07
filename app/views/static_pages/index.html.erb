@@ -7,7 +7,7 @@
     </a>
     <%= render "shared/post_form" %>
   <% end %>
-  <% if @posts.present? %>
+  <% if @posts.any? %>
     <div class="body-posts-area">
       <%= render @posts %>
       <%= paginate @posts, theme: "twitter-bootstrap-3" %>

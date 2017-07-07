@@ -1,0 +1,18 @@
+<%= provide "#{@title}_page".to_sym, "active" %>
+<%= provide :main do %>
+  <div class="row">
+    <% if @users.present? %>
+      <%= render @users %>
+    <% else %>
+      <div class="updates">
+        <div class="alert alert-warning no-updates"><%= t ".no_avail" %></div>
+        <div class="loader hidden text-center">
+          <div class="btn btn-default">
+            <i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<%= render "layouts/main", user: @user %>

@@ -1,0 +1,8 @@
+<%= provide :main do %>
+  <% if @post.present? %>
+    <div class="body-posts-area">
+      <%= render @post %>
+    </div>
+  <% end %>
+<% end %>
+<%= render "layouts/main", user: @user %>
