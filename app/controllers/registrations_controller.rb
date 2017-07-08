@@ -67,8 +67,8 @@ class RegistrationsController < Devise::RegistrationsController
       }
     end
     format.html do
-      flash.now[:success] = t ".success_html"
-      render :edit
+      flash[:success] = t ".success_html"
+      redirect_to profile_path
     end
   end
 

@@ -14,6 +14,8 @@ $(document).ready(function () {
       $('.modal').modal('hide');
       $('.modal').hide();
       $form_object.clear_input();
+      increase_posts_size();
+      $('select').tagsinput('removeAll');
     };
     var error = function (response) {
       $form_object.bootstrap_show_error('post', response.errors);
@@ -38,6 +40,7 @@ $(document).ready(function () {
       success: function (response) {
         if (response.status == 'success') {
           toastr[response.status](response.message);
+          decrease_posts_size();
         }
         else {
           toastr['error']('You have something error!');
@@ -57,14 +60,15 @@ $(document).ready(function () {
     var $self = $(this);
     var $form_object = new Form($self);
     var $footer = new AppElement($self.find('.modal-footer').first());
-
     var start = function () {
       $footer.default_loading_gif();
       $form_object.clear_error();
     };
-    var success = function () {
-      $self.closest('.modal-update-post').modal('hide');
-      update_post_real_time($self);
+    var success = function (response) {
+      $self.closest('.post-item').replaceWith(response.html).hide().fadeIn('normal');
+      $('.modal-update-post').modal('hide');
+      $('.modal-backdrop').remove();
+      $('select').tagsinput('removeAll');
     };
 
     var error = function (response) {
@@ -84,14 +88,18 @@ $(document).ready(function () {
     form.clear_error();
     form.undo_input('post', 'get', form.element.attr('action'));
   });
+
+  $('input[name="post[lists_tag][]"]').remove();
 });
 
-function update_post_real_time(form) {
-  var post_title = form.find('#post_title').val();
-  var post_content = form.find('#post_content').val();
-  var post_area = form.closest('.post-item');
-  post_area.find('.time-ago a').text('Updated less than a minute ago')
-    .hide().fadeIn('slow');
-  post_area.find('.post_title').html(post_title).hide().fadeIn('slow');
-  post_area.find('.post_content').html(post_content).hide().fadeIn('slow');
+function increase_posts_size() {
+  $('.posts-size').each(function () {
+    $(this).text(parseInt($(this).text()) + 1);
+  });
+}
+
+function decrease_posts_size() {
+  $('.posts-size').each(function () {
+    $(this).text(parseInt($(this).text()) - 1);
+  });
 }

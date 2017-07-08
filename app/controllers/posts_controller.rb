@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   include ResourcePost
-  authorize_resource
 
   def index
   end
 
   def create
-    if build_post.save
+    if build_post.create_transaction_post_tags
       render json: {
         status: :success,
         message: t(".success"),
@@ -32,13 +31,14 @@ class PostsController < ApplicationController
   end
 
   def update
-    if post.update_attributes post_params
+    if set_post.update_transaction_post_tags post_params
       render json: {
-        status: :success, message: t(".success")
+        status: :success, message: t(".success"),
+        html: render_to_string(set_post)
       }
     else
       render json: {
-        status: :error, errors: post.errors.messages,
+        status: :error, errors: set_post.errors.messages,
         message: t(".error")
       }
     end

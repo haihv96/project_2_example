@@ -6,7 +6,7 @@ $(document).ready(function () {
   $('body').on('keydown', '.comment-area', function (event) {
     var form = $(this).closest('form');
     if (form.find('#enter_to_comment').prop('checked') &&
-      event.keyCode == 13 && !event.shiftKey
+      event.keyCode == 13 && !event.shiftKey && !form.find('button').prop('disabled')
     ) {
       request_ajax(event, form);
     }
@@ -21,6 +21,9 @@ $(document).ready(function () {
       success: function (response) {
         if (response.status == 'success') {
           button.closest('.comment-item').slideUp('normal');
+          var comment_size = button.closest('.post-item').find('.comment-size');
+          comment_size.text(parseInt(comment_size.text())-1);
+          $('#comments_size').text(parseInt($('#comments_size').text())-1);
         }
       },
       complete: function () {
@@ -94,6 +97,9 @@ function request_ajax(event, form) {
     $(response.html).prependTo($form.closest('.post-item')
       .find('.comments-area'))
       .hide().fadeIn('normal');
+    var comment_size = $form.closest('.post-item').find('.comment-size');
+    comment_size.text(parseInt(comment_size.text())+1);
+    $('#comments_size').text(parseInt($('#comments_size').text())+1);
   };
   var error = function (response) {
     if (response.message) {

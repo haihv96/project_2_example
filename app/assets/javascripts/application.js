@@ -13,6 +13,9 @@
 //= require metronic/ui-modals.min
 //= require metronic/profile.min
 //= require metronic/bootstrap-fileinput
+//= require metronic/bootstrap-tagsinput.min
+//= require metronic/handlebars.min
+//= require metronic/typeahead.bundle.min
 // END PAGE LEVEL PLUGINS -->
 
 // BEGIN THEME GLOBAL SCRIPTS -->
@@ -20,6 +23,7 @@
 // END THEME GLOBAL SCRIPTS -->
 
 // BEGIN PAGE LEVEL SCRIPTS -->
+//= require metronic/components-bootstrap-tagsinput.min
 // END PAGE LEVEL SCRIPTS -->
 
 //= require tinymce

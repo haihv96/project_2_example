@@ -9,4 +9,12 @@ module UsersHelper
     options[:src] = avatar_url
     tag "img", options
   end
+
+  def destroy_relationship other_user
+    current_user.active_relationships.find_by followed_id: other_user.id
+  end
+
+  def new_relationship
+    current_user.active_relationships.build
+  end
 end

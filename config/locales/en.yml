@@ -101,10 +101,13 @@ en:
       posts: "Posts"
       following: "Following"
       followers: "Followers"
+      comments: "Comments"
     user:
       people_followed: "people followed"
     follow:
       no_avail: "No updates available"
+    show:
+      more: "Activity"
   user:
     avatar:
       warning: "should be less than 5MB"
@@ -163,6 +166,8 @@ en:
     index:
       new: "New post"
       no_valid: "No updates available"
+      posts: "Show all posts by author:"
+    tags_length: "Maximum tags is %{number} !"
   helpers:
     update: "Update"
     ago: "ago"
@@ -177,3 +182,7 @@ en:
     destroy:
       unfollowed: "unfollowed"
       error: "Can't unfollow this user!"
+  tags:
+    posts:
+      no_valid: "No post"
+      tags: "Show all post have tag "
