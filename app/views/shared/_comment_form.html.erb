@@ -2,7 +2,7 @@
   <%= avatar_tag current_user, width: Settings.user.avatar.comment_form,
     class: "img-circle" %>
   <div class="panel-update-textarea">
-    <%= form_for [post, current_user.comments.build] do |f| %>
+    <%= form_for [post, Comment.new] do |f| %>
       <%= f.text_area :content, class: "comment-area",
         cols: Settings.comment.box_comment.cols,
         rows: Settings.comment.box_comment.rows %>

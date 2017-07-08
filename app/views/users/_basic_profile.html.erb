@@ -9,26 +9,34 @@
   <div class="profile-userbuttons follow-field">
     <%= render "shared/follow_field", user: user %>
   </div>
-  <div class="profile-usermenu">
-    <ul class="nav">
-      <li class="active">
-        <a href="page_user_profile_1.html">
-          <i class="icon-home"></i> <%= t ".overview" %> </a>
+</div>
+<div class="list-separated profile-stat">
+  <div class="profile">
+    <ul class="list-unstyled profile-nav">
+      <li>
+        <%= link_to posts_user_path user do %>
+          <strong><%= t ".posts" %></strong>
+          <span class="posts-size"> <%= user.posts.size %> </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to posts_user_path user do %>
+          <strong><%= t ".comments" %></strong>
+          <span id="comments_size"> <%= user.comments.size %> </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to following_user_path user do %>
+          <strong><%= t ".following" %></strong>
+          <span class="following-size"> <%= user.following.size %> </span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to followers_user_path user do %>
+          <strong><%= t ".followers" %></strong>
+          <span class="followers-size"> <%= user.followers.size %> </span>
+        <% end %>
       </li>
     </ul>
-  </div>
-</div>
-<div class="row list-separated profile-stat">
-  <div class="col-md-4 col-sm-4 col-xs-6">
-    <div class="uppercase profile-stat-title"><%= user.posts.size %></div>
-    <div class="uppercase profile-stat-text"> <%= t ".posts" %></div>
-  </div>
-  <div class="col-md-4 col-sm-4 col-xs-6">
-    <div class="uppercase profile-stat-title"><%= user.following.size %></div>
-    <div class="uppercase profile-stat-text"> <%= t ".following" %></div>
-  </div>
-  <div class="col-md-4 col-sm-4 col-xs-6">
-    <div class="uppercase profile-stat-title"><%= user.followers.size %></div>
-    <div class="uppercase profile-stat-text"> <%= t ".followers" %></div>
   </div>
 </div>

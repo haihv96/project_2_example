@@ -5,7 +5,8 @@
   <div class="panel-body">
     <div class="comment-section-actions">
       <%= button_tag class: "btn btn-sm btn-default comment-add" do %>
-        <i class="fa fa-comment-o"></i> <%= post.comments.size %>
+        <i class="fa fa-comment-o"></i>
+        <span class="comment-size"><%= post.comments.size %></span>
         <%= t ".comment" %>
       <% end %>
     </div>

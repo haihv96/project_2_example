@@ -1,2 +1,71 @@
 <%= provide :profile_page, "active" %>
+<%= provide :main do %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet light ">
+        <div class="portlet-title tabbable-line">
+          <div class="caption caption-md">
+            <i class="icon-globe theme-font hide"></i>
+            <span class="caption-subject font-blue-madison bold uppercase">
+              <%= t ".profile_account" %>
+            </span>
+          </div>
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#tab_1_1" data-toggle="tab"><%= t ".account_setting" %></a>
+            </li>
+          </ul>
+        </div>
+        <div class="portlet-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_1_1">
+              <div class="col-md-6 no-padding-left">
+                <div class="portlet box">
+                  <div class="portlet-title bg-green-seagreen">
+                    <div class="caption">
+                      <span aria-hidden="true" class="icon-user"></span>
+                      <%= t ".personal_info" %>
+                    </div>
+                  </div>
+                  <div class="portlet-body">
+                    <div class="row">
+                      <div class="form-group">
+                        <%= label_tag :full_name, nil, class: "bold" %>
+                        <%= text_field_tag :phone, @user.full_name,
+                          class: "form-control", disabled: true %>
+                      </div>
+                      <div class="form-group">
+                        <%= label_tag :phone, nil, class: "bold" %>
+                        <%= text_field_tag :full_name, @user.phone,
+                          class: "form-control", disabled: true %>
+                      </div>
+                      <div class="form-group">
+                        <%= label_tag :gender, nil, class: "bold" %>
+                        <%= text_field_tag :gender, @user.gender,
+                          class: "form-control", disabled: true %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 no-padding-left">
+                <div class="portlet box">
+                  <div class="portlet-title bg-red">
+                    <div class="caption">
+                      <span aria-hidden="true" class="icon-badge"></span>
+                      <%= t ".more" %>
+                    </div>
+                  </div>
+                  <div class="portlet-body profile">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 <%= render "layouts/main", user: @user %>
