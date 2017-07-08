@@ -23,6 +23,12 @@
               rows: Settings.post.box_size.rows,
               class: "form-control tinymce" %>
           </div>
+          <div class="form-group">
+            <%= f.label :tags, class: "control-label bold" %>
+            <%= f.select :lists_tag, post.tags_name, {},
+              class: "form-control input-lg",
+              "data-role": "tagsinput", multiple: true %>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger cancel-edit-post"
