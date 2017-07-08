@@ -15,4 +15,7 @@ Rails.application.routes.draw do
     resources :comments, except: [:new]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :tags do
+    get :posts
+  end
 end
