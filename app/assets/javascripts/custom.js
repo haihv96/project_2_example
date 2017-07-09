@@ -7,6 +7,7 @@ $(document).ready(function () {
   $('.alert').delay(6000).slideUp(200, function () {
     $(this).alert('close');
   });
+  reloadTINYMCE('textarea');
 });
 
 toastr.options = {
@@ -23,6 +24,13 @@ toastr.options = {
   'showMethod': 'fadeIn',
   'hideMethod': 'fadeOut'
 };
+
+function reloadTINYMCE(){
+  tinyMCE.EditorManager.editors = [];
+  tinyMCE.init({
+    selector: 'textarea.tinymce'
+  });
+}
 
 var AppElement = function (element) {
   this.app_element = element;
