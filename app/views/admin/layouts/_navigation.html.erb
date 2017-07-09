@@ -1,0 +1,42 @@
+<div class="page-header navbar navbar-fixed-top">
+  <div class="page-header-inner">
+    <div class="page-logo">
+      <%= link_to admin_root_path do %>
+        <%= image_tag "logo/logo.png", class: "logo-default" %>
+      <% end %>
+      <div class="menu-toggler sidebar-toggler"></div>
+    </div>
+    <a href="javascript:;" class="menu-toggler responsive-toggler"
+      data-toggle="collapse" data-target=".navbar-collapse">
+    </a>
+    <div class="top-menu">
+      <ul class="nav navbar-nav pull-right">
+        <li class="dropdown dropdown-user">
+          <%= link_to "javascript:;", class: "dropdown-toggle",
+            data: {toggle: "dropdown", hover: "dropdown",
+              "close-others": "true"}, "aria-expanded": "false" do %>
+            <%= avatar_tag current_user, class: "img-circle" %>
+            <span class="username username-hide-on-mobile">
+              <%= current_user.full_name %>
+            </span>
+            <i class="fa fa-angle-down"></i>
+          <% end %>
+          <ul class="dropdown-menu dropdown-menu-default">
+            <li>
+              <%= link_to current_user, target: "_blank" do %>
+                <i class="icon-user"></i> <%= t ".profile" %> </a>
+              <% end %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="icon-key"></i> <%= t ".logout" %>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>

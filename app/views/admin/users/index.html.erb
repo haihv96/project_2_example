@@ -1,0 +1,35 @@
+<%= provide :title, t(".title") %>
+<%= provide :menu_name, t(".menu_name") %>
+<%= provide :sub_menu_name, t(".sub_menu_name") %>
+<%= provide :sub_menu_describe, t(".sub_menu_describe") %>
+<%= provide :users_menu, t(".status") %>
+<%= provide :admin_users_path, t(".status") %>
+<div class="portlet box dark">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="fa fa-cogs"></i><%= t ".list" %>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr>
+            <th> <%= t ".id" %></th>
+            <th> <%= t ".name" %></th>
+            <th> <%= t ".email" %></th>
+            <th> <%= t ".phone" %></th>
+            <th> <%= t ".role" %></th>
+            <th> <%= t ".view" %></th>
+            <th> <%= t ".edit" %></th>
+            <th> <%= t ".delete" %></th>
+          </tr>
+          </thead>
+          <tbody>
+          <%= render @users %>
+          </tbody>
+        </table>
+      <%= paginate @users, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>
