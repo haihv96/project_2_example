@@ -5,7 +5,11 @@
 <div class="profile-sidebar">
   <% if user.present? %>
     <%= render "users/basic_profile", user: user %>
-  <% end %>
+  <% else %>
+    <div class="col-md-12">
+      <%= render "devise/shared/login_form" %>
+    </div>
+  <% end  %>
 </div>
 <div class="profile-content white-space no-padding">
   <div class="portlet-body">
@@ -55,4 +59,3 @@
     </div>
   </div>
 </div>
-<%= tinymce %>

@@ -2,10 +2,14 @@
   <div class="col-md-12 portlet light bordered">
     <div class="row">
       <div class="col-md-4">
-        <%= avatar_tag user, width: Settings.user.avatar.show_user %>
+        <%= link_to user do %>
+          <%= avatar_tag user, width: Settings.user.avatar.show_user %>
+        <% end %>
       </div>
       <div class="col-md-8 no-padding-left">
-        <h4 class="bold"><%= user.full_name %></h4>
+        <%= link_to user, class: "font-dark" do %>
+          <h4 class="bold"><%= user.full_name %></h4>
+        <% end %>
         <cite><%= user.email %></cite>
         <div class="comment-action">
           <cite class="font-grey-mint">

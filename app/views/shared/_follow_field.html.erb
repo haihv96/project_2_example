@@ -1,18 +1,20 @@
-<% if current_user.following? user %>
-  <%= form_for destroy_relationship(user), method: :delete do |f| %>
-    <%= f.button type: "submit",
-      class: "btn btn-sm btn-danger button-unfollow" do %>
-      <span aria-hidden="true" class="icon-user-unfollow"></span>
-      <%= t ".unfollow" %>
+<% if user_signed_in? %>
+  <% if current_user.following? user %>
+    <%= form_for destroy_relationship(user), method: :delete do |f| %>
+      <%= f.button type: "submit",
+        class: "btn btn-sm btn-danger button-unfollow" do %>
+        <span aria-hidden="true" class="icon-user-unfollow"></span>
+        <%= t ".unfollow" %>
+      <% end %>
     <% end %>
-  <% end %>
-<% elsif user != current_user %>
-  <%= form_for new_relationship do |f| %>
-    <%= f.hidden_field :followed_id, value: user.id %>
-    <%= f.button type: "submit",
-      class: "btn btn-sm btn-primary button-follow" do %>
-      <span aria-hidden="true" class="icon-user-follow"></span>
-      <%= t ".follow" %>
+  <% elsif user != current_user %>
+    <%= form_for new_relationship do |f| %>
+      <%= f.hidden_field :followed_id, value: user.id %>
+      <%= f.button type: "submit",
+        class: "btn btn-sm btn-primary button-follow" do %>
+        <span aria-hidden="true" class="icon-user-follow"></span>
+        <%= t ".follow" %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

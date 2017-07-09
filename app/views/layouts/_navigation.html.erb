@@ -32,12 +32,14 @@
                   <%= t ".profile" %>
                 <% end %>
               </li>
-              <li>
-                <%= link_to "#" do %>
-                  <span aria-hidden="true" class="icon-users"></span>
-                  <%= t ".list_user" %>
-                <% end %>
-              </li>
+              <% if can? :manage, :all %>
+                <li>
+                  <%= link_to admin_root_path do %>
+                    <span aria-hidden="true" class="icon-settings"></span>
+                    <%= t ".admin" %>
+                  <% end %>
+                </li>
+              <% end %>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <i class="fa fa-sign-out"></i> <%= t ".logout" %>
