@@ -10,11 +10,11 @@
     </div>
   </h3>
   <div class="panel-title"><strong class="post_title"><%= post.title %></strong>
-    <div class="post-tags">
+    <div class="post-tags font-blue-ebonyclay">
       <% if post.tags.try :any? %>
         <hr class="no-padding">
-        <span class="font-blue-madison">Tags: </span>
-        <%= render post.tags %>
+        <i class="fa fa-tags"></i> <%= t ".tag" %>:
+        <%= render post.tags_time_line %>
       <% end %>
     </div>
   </div>

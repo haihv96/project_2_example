@@ -25,7 +25,7 @@ class Post < ApplicationRecord
 
   def tags_name
     return {} unless tags.present?
-    tags.pluck :name
+    tags_time_line.pluck :name
   end
 
   def create_transaction_post_tags
@@ -61,11 +61,14 @@ class Post < ApplicationRecord
     end
   rescue ActiveRecord::RecordInvalid => exception
     errors[:lists_tag] << exception.message
+    return false
   end
 
   def validate_tags_length
     max_tags = Settings.post.max_tags
     if lists_tag.present?
+      lists_tag.uniq!
+      lists_tag.delete ""
       if lists_tag.length > max_tags
         errors.add :lists_tag, I18n.t("posts.tags_length", number: max_tags)
         return false
@@ -75,15 +78,18 @@ class Post < ApplicationRecord
   end
 
   def update_tags
-    return true unless lists_tag.present?
-    delete_tags_if_not_exists
+    tags.delete_all
     update_new_tags
+  rescue ActiveRecord::RecordInvalid => exception
+    errors[:lists_tag] << exception.message
+    return false
   end
 
   def update_new_tags
+    return true unless lists_tag.present?
     names = tags.pluck :name
     lists_tag.each do |tag|
-      tags << Tag.find_or_create_by(name: tag) unless names.include? tag
+      tags << Tag.find_or_create_by!(name: tag) unless names.include? tag
     end
   end
 
@@ -91,5 +97,10 @@ class Post < ApplicationRecord
     tags.each do |current_tag|
       tags.delete current_tag unless lists_tag.include? current_tag.name
     end
+  end
+
+  def tags_time_line
+    Tag.joins(:post_tags).where("post_tags.post_id = #{id}")
+      .order("post_tags.id asc")
   end
 end

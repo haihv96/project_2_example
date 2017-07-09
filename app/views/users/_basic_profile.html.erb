@@ -1,9 +1,13 @@
 <div class="portlet light profile-sidebar-portlet">
   <div class="profile-userpic">
-    <%= avatar_tag user, class: "img-responsive" %>
+    <%= link_to user do %>
+      <%= avatar_tag user, class: "img-responsive" %>
+    <% end  %>
   </div>
   <div class="profile-usertitle">
-    <div class="profile-usertitle-name"><%= user.full_name %></div>
+    <div class="profile-usertitle-name">
+      <%= link_to user.full_name, user, class: "black" %>
+    </div>
     <div class="profile-usertitle-job"><%= user.gender %></div>
   </div>
   <div class="profile-userbuttons follow-field">

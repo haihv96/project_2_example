@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   VALID_PHONE_REGEX = /\A(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*\z/
 
-  enum role: [:user, :admin]
+  enum role: [:member, :admin]
   enum gender: [:female, :male, :other]
 
   mount_uploader :avatar, AvatarUploader
@@ -26,6 +26,10 @@ class User < ApplicationRecord
   validate :avatar_size
 
   before_save :downcase_email
+
+  scope :order_manager, lambda {
+    order "field(role," << User.roles.values.to_a.reverse.join(",") << ")"
+  }
 
   def feed
     if following.present?

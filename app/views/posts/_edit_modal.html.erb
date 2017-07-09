@@ -25,9 +25,8 @@
           </div>
           <div class="form-group">
             <%= f.label :tags, class: "control-label bold" %>
-            <%= f.select :lists_tag, post.tags_name, {},
-              class: "form-control input-lg",
-              "data-role": "tagsinput", multiple: true %>
+            <%= f.select :lists_tag, post.tags_name, {}, multiple: true,
+              class: "form-control input-lg", data: {role: "tagsinput"} %>
           </div>
         </div>
         <div class="modal-footer">

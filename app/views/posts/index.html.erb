@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <% if current_user.is? @user %>
+  <% if current_user.try :is?, @user %>
     <a id="sample_editable_1_new" data-toggle="modal" href="#large"
       class="btn sbold blue-steel"> <%= t ".new" %>
       <i class="fa fa-plus"></i>
