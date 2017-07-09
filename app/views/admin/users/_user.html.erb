@@ -1,0 +1,16 @@
+<tr>
+  <td> <%= user.id %></td>
+  <td> <%= user.full_name %></td>
+  <td> <%= user.email %></td>
+  <td> <%= user.phone %></td>
+  <td> <%= user.role %></td>
+  <td>
+    <%= link_to user, target: "_blank" do %>
+      <span class="btn btn-circle btn-icon-only grey btn-default" href="javascript:;">
+        <i class="fa fa-eye"></i>
+      </span>
+    <% end %>
+  </td>
+  <td><%= render "admin/users/modal_edit", user: user %></td>
+  <td><%= render "admin/users/modal_delete", user: user %></td>
+</tr>

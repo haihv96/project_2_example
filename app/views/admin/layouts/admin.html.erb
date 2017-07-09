@@ -1,0 +1,17 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= yield :title %></title>
+    <%= render "admin/layouts/include_assets" %>
+  </head>
+  <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <div class="page-wrapper">
+      <%= render "admin/layouts/navigation" %>
+      <div class="page-container">
+        <%= render "admin/layouts/sidebar" %>
+        <%= render "admin/layouts/container" %>
+      </div>
+      <%= render "admin/layouts/footer" %>
+    </div>
+  </body>
+</html>

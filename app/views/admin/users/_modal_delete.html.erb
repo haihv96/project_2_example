@@ -1,0 +1,25 @@
+<span class="btn btn-circle btn-icon-only red btn-default" data-toggle="modal"
+  href="#destroy_user_<%= user.id %>_id">
+  <i class="fa fa-trash-o"></i>
+</span>
+<div class="modal fade" id="destroy_user_<%= user.id %>_id" tabindex="-1"
+  role="basic" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        </button>
+        <h4 class="modal-title"><%= t ".confirm" %></h4>
+      </div>
+      <div class="modal-body"> <%= t ".confirm_message" %> <%= user.email %>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn dark btn-outline" data-dismiss="modal">
+          <%= t ".cancel" %>
+        </button>
+        <%= link_to t(".delete"), admin_user_path(user), remote: true,
+          class: "btn red delete_user", method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
