@@ -16,6 +16,7 @@ $(document).ready(function () {
       $form_object.clear_input();
       increase_posts_size();
       $('select').tagsinput('removeAll');
+      reloadTINYMCE();
     };
     var error = function (response) {
       $form_object.bootstrap_show_error('post', response.errors);
@@ -65,10 +66,11 @@ $(document).ready(function () {
       $form_object.clear_error();
     };
     var success = function (response) {
-      $self.closest('.post-item').replaceWith(response.html).hide().fadeIn('normal');
+      $self.closest('.post-item').replaceWith(response.html).hide().fadeIn('slow');
       $('.modal-update-post').modal('hide');
       $('.modal-backdrop').remove();
       $('select').tagsinput('removeAll');
+      reloadTINYMCE();
     };
 
     var error = function (response) {

@@ -30,4 +30,9 @@
 //= require toastr
 //= require jquery.jcrop
 //= require rails-timeago
-//= require_tree .
+//= require custom
+//= require comments
+//= require posts
+//= require follow
+//= require paginate
+//= require users

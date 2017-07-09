@@ -7,6 +7,7 @@ en:
       profile: "Profile"
       list_user: "List user"
       logout: "Logout"
+      admin: "Admin dashboard"
     application:
       title: "Framgia Communication"
     main:
@@ -168,6 +169,8 @@ en:
       no_valid: "No updates available"
       posts: "Show all posts by author:"
     tags_length: "Maximum tags is %{number} !"
+    head_post:
+      tag: "Tags"
   helpers:
     update: "Update"
     ago: "ago"
@@ -186,3 +189,63 @@ en:
     posts:
       no_valid: "No post"
       tags: "Show all post have tag "
+  admin:
+    users:
+      update:
+        success: "Update user successful"
+        error: "Update user error!"
+      destroy:
+        success: "Delete user %{email} successful"
+        error: "Delete user %{email} error!"
+      modal_delete:
+        delete: "Delete"
+        confirm_message: "Are you sure delete"
+        confirm: "Confirm delete user"
+        cancel: "Cancel"
+      modal_edit:
+        update: "Update"
+        reset: "Reset"
+        cancel: "Cancel"
+        edit: "edit user"
+      index:
+        list: "List users"
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        role: "Role"
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        title: "Users manager"
+        menu_name: "Users manager"
+        sub_menu_name: "List users"
+        sub_menu_describe: "manager all user in system"
+        status: "active open"
+    base:
+      verify_admin:
+        notice: "Permission denied!"
+    layouts:
+      sidebar_menu:
+        dashboard:
+          dashboard: "Dashboard"
+        user_manager:
+          all_user: "All user"
+          users: "Users"
+      container:
+        home: "Home"
+      footer:
+        title: "2017 © Framgia Communication Admin Dashboard"
+      navigation:
+        profile: "My Profile"
+        logout: "Log Out"
+    static_pages:
+      index:
+        tags: "Tags"
+        analytics: "Users analytics"
+        comments: "Comments"
+        posts: "Posts"
+        users: "Users"
+        status: "active open"
+        content: "statistics, charts, recent events and reports"
+        dashboard: "Admin dashboard"

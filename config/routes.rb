@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get "profile", to: "registrations#edit"
   end
   devise_for :users, controllers: {registrations: "registrations"}
-  resources :users do
+  resources :users, only: :show do
     member do
       get :following, :followers
       get :posts, to: "posts#index"
@@ -15,7 +15,12 @@ Rails.application.routes.draw do
     resources :comments, except: [:new]
   end
   resources :relationships, only: [:create, :destroy]
-  resources :tags do
+  resources :tags, only: :show do
     get :posts
+  end
+
+  namespace :admin do
+    root "static_pages#index"
+    resources :users
   end
 end
