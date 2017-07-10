@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   include ResourcePost
+  authorize_resource
 
   def index
   end

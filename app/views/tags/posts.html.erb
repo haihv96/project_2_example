@@ -5,6 +5,7 @@
         <span aria-hidden="true" class="icon-tag"></span>
         <%= t ".tags" %>
         <span class="bold">"<%= @tag.name %>"</span>
+        (<%= @posts.try :size %> <%= t ".posts" %>)
       </div>
     </div>
   </div>
