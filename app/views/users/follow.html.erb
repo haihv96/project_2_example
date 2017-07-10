@@ -11,6 +11,7 @@
   <div class="row">
     <% if @users.try :any? %>
       <%= render @users %>
+      <%= paginate @users, theme: "twitter-bootstrap-3" %>
     <% else %>
       <div class="updates">
         <div class="alert alert-warning no-updates"><%= t ".no_avail" %></div>

@@ -5,6 +5,6 @@ class Admin::BaseController < ApplicationController
   def verify_admin
     return if current_user.try :admin?
     flash[:danger] = t ".notice"
-    redirect_to destroy_user_session_path
+    redirect_to root_path
   end
 end

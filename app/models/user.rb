@@ -31,6 +31,11 @@ class User < ApplicationRecord
     order "field(role," << User.roles.values.to_a.reverse.join(",") << ")"
   }
 
+  scope :search, lambda { |keyword|
+    where "full_name LIKE BINARY :keyword OR email LIKE :keyword
+      OR phone LIKE :keyword", keyword: keyword
+  }
+
   def feed
     if following.present?
       Post.feed_by_user following.ids, id

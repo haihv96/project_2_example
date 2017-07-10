@@ -73,6 +73,8 @@ en:
         forgot_password: "Forgot your password?"
         unlock: "Didn't receive unlock instructions?"
         confirm: "Didn't receive confirmation instructions?"
+      login_form:
+        login: "Login"
     sessions:
       new:
         login: "Log in"
@@ -96,6 +98,8 @@ en:
     follow_field:
       follow: "Follow"
       unfollow: "Unfollow"
+    users_json:
+      followed: "followed"
   users:
     basic_profile:
       overview: "Overview"
@@ -222,9 +226,6 @@ en:
         sub_menu_name: "List users"
         sub_menu_describe: "manager all user in system"
         status: "active open"
-    base:
-      verify_admin:
-        notice: "Permission denied!"
     layouts:
       sidebar_menu:
         dashboard:
@@ -249,3 +250,8 @@ en:
         status: "active open"
         content: "statistics, charts, recent events and reports"
         dashboard: "Admin dashboard"
+        notice: "Permission denied!"
+  searchs:
+    users:
+      result: "All Users match keyword"
+      no_user: "No users match"

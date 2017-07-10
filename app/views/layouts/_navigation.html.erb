@@ -4,16 +4,20 @@
       <%= link_to t(".title"), root_path, class: "navbar-brand" %>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
-      <form method="POST" accept-charset="UTF-8" class="navbar-form navbar-left">
+      <%= form_for :search, url: search_path, method: :get,
+        html: {class: "navbar-form navbar-left form-search"} do |f| %>
         <div class="input-group navbar-input-group">
-          <input class="form-control navbar-form-input" placeholder="Search">
+          <%= f.text_field :keyword, class: "form-control navbar-form-input",
+            placeholder: "Search people", id: "search", autocomplete: "off" %>
+          <%= f.hidden_field :type, value: "users" %>
           <span class="input-group-addon">
-            <button type="submit">
+            <%= f.button do %>
               <span aria-hidden="true" class="icon-magnifier"></span>
-            </button>
+            <% end %>
           </span>
         </div>
-      </form>
+        <div class="search-result"></div>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li class="dropdown hidden-xs">

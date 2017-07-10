@@ -184,3 +184,27 @@ hr {
 label {
   font-weight: bold;
 }
+
+.form-search {
+  position: relative;
+}
+
+.search-result {
+  position: absolute;
+  width: 90%;
+  background: $white;
+  border: 1px solid ;
+}
+
+.item-user-search {
+  border-bottom: dotted 1px $gray-dark;
+  font-size: 0.9em;
+  padding: 5px 0 5px 5px;
+  .info-user {
+    padding-left: 15px;
+  }
+  &:hover {
+    background: $light-gray;
+    cursor: pointer;
+  }
+}

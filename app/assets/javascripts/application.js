@@ -11,11 +11,9 @@
 
 // BEGIN PAGE LEVEL PLUGINS -->
 //= require metronic/ui-modals.min
-//= require metronic/profile.min
 //= require metronic/bootstrap-fileinput
 //= require metronic/bootstrap-tagsinput.min
 //= require metronic/handlebars.min
-//= require metronic/typeahead.bundle.min
 // END PAGE LEVEL PLUGINS -->
 
 // BEGIN THEME GLOBAL SCRIPTS -->
@@ -24,15 +22,16 @@
 
 // BEGIN PAGE LEVEL SCRIPTS -->
 //= require metronic/components-bootstrap-tagsinput.min
+//= require typeahead.bundle
 // END PAGE LEVEL SCRIPTS -->
 
 //= require tinymce
 //= require toastr
 //= require jquery.jcrop
-//= require rails-timeago
 //= require custom
 //= require comments
 //= require posts
 //= require follow
 //= require paginate
 //= require users
+//= require searchs
