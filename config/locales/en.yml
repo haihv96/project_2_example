@@ -193,6 +193,7 @@ en:
     posts:
       no_valid: "No post"
       tags: "Show all post have tag "
+      posts: "posts"
   admin:
     users:
       update:
@@ -255,3 +256,4 @@ en:
     users:
       result: "All Users match keyword"
       no_user: "No users match"
+      users: "users"
