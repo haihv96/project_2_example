@@ -3,7 +3,7 @@ class SearchsController < ApplicationController
     return unless params[:search][:type] == "users"
     keyword = "%#{params[:search][:keyword]}%"
     @users = User.search keyword
-
+    @size = @users.try :size
     if request.xhr?
       @users = @users.limit Settings.users.limit
     else
