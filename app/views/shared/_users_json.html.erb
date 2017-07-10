@@ -1,0 +1,14 @@
+<% @users.each do |user| %>
+  <div class="item-user-search col-md-12">
+    <%= link_to user, class: "black" do %>
+      <div class="pull-left">
+        <%= avatar_tag user, width: Settings.user.avatar.head_post %>
+      </div>
+      <div class="pull-left info-user">
+        <p class="bold"><%= user.full_name %></p>
+        <div><%= user.email %></div>
+        <i><%= user.followers.size %> <%= t ".followed" %></i>
+      </div>
+    <% end %>
+  </div>
+<% end %>

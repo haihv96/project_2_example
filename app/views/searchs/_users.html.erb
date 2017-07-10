@@ -1,0 +1,21 @@
+<div class="portlet box">
+  <div class="portlet-title bg-blue-steel">
+    <div class="caption">
+      <span aria-hidden="true" class="icon-pencil"></span>
+      <%= t ".result" %> "<%= @keyword %>"
+    </div>
+  </div>
+</div>
+<% if @users.try :any? %>
+  <%= render @users %>
+  <%= paginate @users, theme: "twitter-bootstrap-3" %>
+<% else %>
+  <div class="updates">
+    <div class="alert alert-warning no-updates"><%= t ".no_user" %> "<%= @keyword %>"</div>
+    <div class="loader hidden text-center">
+      <div class="btn btn-default">
+        <i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+<% end %>

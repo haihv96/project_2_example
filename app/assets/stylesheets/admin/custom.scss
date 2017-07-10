@@ -1,2 +1,15 @@
 @import 'toastr';
 @import 'toastr-responsive';
+
+.page-content {
+  min-height: 1001px;
+}
+
+.page-sidebar-menu {
+  padding-top: 20px;
+}
+
+.nav-item,
+.modal {
+  display: none;
+}

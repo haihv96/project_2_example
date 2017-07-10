@@ -1,15 +1,9 @@
 <li class="nav-item <%= yield :users_menu %>">
-  <a href="javascript:;" class="nav-link nav-toggle">
+  <%= link_to admin_users_path, class: "nav-link nav-toggle" do %>
     <i class="icon-user"></i>
-    <span class="title"><%= t ".users" %></span>
-    <span class="arrow"></span>
-  </a>
-  <ul class="sub-menu">
-    <li class="nav-item <%= yield :admin_users_path %> ">
-      <%= link_to admin_users_path, class: "nav-link" do %>
-        <i class="icon-user"></i>
-        <span class="title"><%= t ".all_user" %></span>
-      <% end %>
-    </li>
-  </ul>
+      <span class="title"><%= t ".all_user" %></span>
+      <span class="selected"></span>
+      <span class="arrow"></span>
+      <li class="nav-item"></li>
+    <% end %>
 </li>
